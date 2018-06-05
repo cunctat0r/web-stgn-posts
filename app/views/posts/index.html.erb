@@ -1,2 +1,10 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |post| %>
+  <div id="post">
+    <p id="line_name">
+    <strong>Линия</strong> <%= post.line_name %> <strong>опора</strong> <%= post.num_tower %>
+    </p>
+  </div>
+<% end%>
+<div id="links">
+  <%= link_to 'Новый пост', new_post_path, {class: "btn btn-primary"}%>
+</div>
