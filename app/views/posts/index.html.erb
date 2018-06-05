@@ -1,11 +1,18 @@
-<% @posts.each do |post| %>
-  <div id="post">
-    <p id="line_name">
-      <strong>Линия</strong> <%= post.line_name %> <strong>опора</strong> <%= post.num_tower %> 
-      <%= link_to 'Показать', post_path(post) %>
-    </p>
+<div class="row">
+    <div class="col col-md-6 offset-md-3">
+  <% @posts.each do |post| %>
+    <div id="post" class="border border-primary rounded mt-1 text-center">
+        <%= link_to post_path(post) do %>
+          <strong>Линия</strong> <%= post.line_name %> <strong>опора</strong> <%= post.num_tower %> 
+        <% end %>
+    </div>
+  <% end%>
   </div>
-<% end%>
-<div id="links">
-  <%= link_to 'Новый пост', new_post_path, {class: "btn btn-primary"}%>
+</div>
+<div class="row">
+  <div id="links" class="col col-md-6 offset-md-3 mt-1">
+    <div class="center-block">
+      <%= link_to 'Новый пост', new_post_path, {class: "btn btn-primary"} %>
+    </div>
+</div>
 </div>
