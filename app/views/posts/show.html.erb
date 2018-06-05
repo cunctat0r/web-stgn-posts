@@ -1,2 +1,10 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div id="post">
+  Линия <%= @post.line_name %>
+  Опора <%= @post.num_tower %>
+</div>
+<div class="btn-group">
+  <%= link_to 'Назад', root_path %>
+  <%= link_to 'Изменить', edit_post_path %>
+  <%= link_to 'Удалить', post_path(@post), method: :delete, data: {confirm: 'Вы уверены?'}%>
+</div>
+

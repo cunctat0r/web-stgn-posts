@@ -1,7 +1,8 @@
 <% @posts.each do |post| %>
   <div id="post">
     <p id="line_name">
-    <strong>Линия</strong> <%= post.line_name %> <strong>опора</strong> <%= post.num_tower %>
+      <strong>Линия</strong> <%= post.line_name %> <strong>опора</strong> <%= post.num_tower %> 
+      <%= link_to 'Показать', post_path(post) %>
     </p>
   </div>
 <% end%>
