@@ -12,10 +12,20 @@
 
 <div class="row mt-2">
   <div class="col-md-5 border round">
-    <p>Placeholder for force_sensors</p>
+    <p>Размещение датчиков усилия</p>
+    <% @post.force_sensors.each do |sensor| %>
+      <p>
+        Датчик <%= sensor.sensor_number %>: фаза <%= sensor.phase %>
+      </p>
+    <% end %>
   </div>
   <div class="col-md-6 border round">
-    <p>Placeholder for temperature_sensors</p>
+    <p>Размещение датчиков температуры</p>
+    <% @post.temperature_sensors.each do |sensor| %>
+      <p>
+        Датчик <%= sensor.sensor_number %>: фаза <%= sensor.phase %>
+      </p>
+    <% end %>
   </div>
 </div>
 <div class="row mt-2">

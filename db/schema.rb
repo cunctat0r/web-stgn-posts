@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_074156) do
+ActiveRecord::Schema.define(version: 2018_06_05_102454) do
+
+  create_table "force_sensors", force: :cascade do |t|
+    t.integer "sensor_number"
+    t.string "phase"
+    t.integer "chain"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_force_sensors_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "num_tower"
     t.string "line_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "temperature_sensors", force: :cascade do |t|
+    t.integer "sensor_number"
+    t.string "phase"
+    t.integer "chain"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_temperature_sensors_on_post_id"
   end
 
 end

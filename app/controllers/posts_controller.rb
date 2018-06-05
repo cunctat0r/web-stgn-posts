@@ -39,7 +39,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:num_tower, :line_name)
+    params.require(:post).permit(
+      :num_tower,
+      :line_name,
+      force_sensors_attributes: [:id, :sensor_number, :phase, :chain, :_destroy],
+      temperature_sensors_attributes: [:id, :sensor_number, :phase, :chain, :_destroy]
+    )
   end
 
   def set_post
