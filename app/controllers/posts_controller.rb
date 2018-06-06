@@ -42,7 +42,19 @@ class PostsController < ApplicationController
     params.require(:post).permit(
       :num_tower,
       :line_name,
-      force_sensors_attributes: [:id, :sensor_number, :phase, :chain, :_destroy],
+      force_sensors_attributes: [:id, 
+                                 :sensor_number, 
+                                 :phase, 
+                                 :chain, 
+                                 :_destroy,
+                                 force_limits_sets_attributes: [
+                                   :free_weight,
+                                   :detection_limit,
+                                   :warning_limit,
+                                   :alarm_limit,
+                                   :_destroy
+                                 ]
+                                ],
       temperature_sensors_attributes: [:id, :sensor_number, :phase, :chain, :_destroy]
     )
   end

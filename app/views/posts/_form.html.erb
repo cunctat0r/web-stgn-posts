@@ -1,28 +1,16 @@
-<div class="form">
-  <%= simple_form_for @post, html: { multipart: true } do |f| %>
-    <%= f.input :num_tower, class: 'form-control' %>
-    <%= f.input :line_name,  class: 'form-control' %>
-    <div class="row">
-      <div class="col-md-6">
-        <h3>Датчики усилия</h3>
-          <%= f.simple_fields_for :force_sensors do |force_sensor| %>
-            <%= render 'sensor_fields', f: force_sensor %>
-          <% end %>
-          <div class="links">
-            <%= link_to_add_association 'Добавить датчик', f, :force_sensors, partial: 'sensor_fields' %>
-          </div>
-      </div>
-      <div class="col-md-6">
-        <h3>Датчики температуры</h3>
-          <%= f.simple_fields_for :temperature_sensors do |temperature_sensor| %>
-            <%= render 'sensor_fields', f: temperature_sensor %>
-          <% end %>
-          <div class="links">
-            <%= link_to_add_association 'Добавить датчик', f, :temperature_sensors, partial: 'sensor_fields' %>
-          </div>
-      </div>
-    </div>
-    <%= link_to 'Назад', root_path, class: 'btn btn-primary' %>
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>  
-  <% end %>
-</div>
+<%= simple_form_for @post, html: { multipart: true } do |p| %>
+  <%= p.input :num_tower %>
+  <%= p.input :line_name %>
+
+  <%= p.simple_fields_for :force_sensors do |fs| %>
+    <%= render 'sensor_fields', f: fs %>
+  <% end%>
+
+  <div class='links'>
+    <%= link_to_add_association 'Добавить датчик', p, :force_sensors, partial: 'sensor_fields' %>
+  </div></div>
+
+
+  <%= p.submit 'Save' %>
+
+<% end %>

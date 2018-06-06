@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  free_weight: 1.5
+  detection_limit: 1.5
+  warning_limit: 1.5
+  alarm_limit: 1.5
+  force_sensor: one
+
+two:
+  free_weight: 1.5
+  detection_limit: 1.5
+  warning_limit: 1.5
+  alarm_limit: 1.5
+  force_sensor: two
