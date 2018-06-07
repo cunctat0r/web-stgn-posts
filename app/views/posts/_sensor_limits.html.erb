@@ -1,7 +1,13 @@
-<div class="row nested-fields justify-content-center align-items-center border  border-primary rounded mt-1">
-  <%= e.input :free_weight %>
-  <%= e.input :detection_limit %>
-  <%= e.input :warning_limit %>
-  <%= e.input :alarm_limit %>
+<div class="container">
+  <div class="row nested-fields justify-content-center align-items-center border  border-primary rounded mt-1">
+    <div class="col-md-3">
+      <%= e.input :free_weight, label: 'Сухой провод' %></div>
+    <div class="col-md-3">
+      <%= e.input :detection_limit, label: 'Обнаружение' %></div>
+    <div class="col-md-3">
+      <%= e.input :warning_limit, label: 'Тревога'  %></div>
+    <div class="col-md-3">
+      <%= e.input :alarm_limit, label: 'Опасность'  %></div>
+  </div>
 </div>
 

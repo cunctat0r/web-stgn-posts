@@ -48,6 +48,8 @@ class PostsController < ApplicationController
                                  :chain, 
                                  :_destroy,
                                  force_limits_set_attributes: [
+                                   :id,
+                                   :force_sensor_id,
                                    :free_weight,
                                    :detection_limit,
                                    :warning_limit,

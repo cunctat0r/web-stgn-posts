@@ -1,15 +1,14 @@
 <div class="row nested-fields justify-content-center align-items-center border  border-primary rounded mt-1">
-  <%= s.input :sensor_number %>
-  <%= s.input :phase %>
-  <%= s.input :chain %>
+  <div class="col-md-4"><%= s.input :sensor_number, label: 'Номер'  %></div>
+  <div class="col-md-4"><%= s.input :phase, label: 'Фаза'  %></div>
+  <div class="col-md-4"><%= s.input :chain, label: 'Цепь'  %></div>
 
   <%= s.simple_fields_for :force_limits_set do |e|  %>
     <%= render "sensor_limits", e: e %>
   <% end %>
 
-
   <div class="links">
-    <%= link_to_add_association 'Добавить уставки', s, :force_limits_set, partial: 'sensor_limits', form_name: "e" %>
+    <%= link_to_add_association 'Добавить уставки', s, :force_limits_set, partial: 'sensor_limits', form_name: "e", force_non_association_create: true %>
   </div>
 
   <%= link_to_remove_association "Удалить", s %>
