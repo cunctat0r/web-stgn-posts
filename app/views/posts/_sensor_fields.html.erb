@@ -3,13 +3,13 @@
   <%= s.input :phase %>
   <%= s.input :chain %>
 
-  <%= s.simple_fields_for :force_limits_sets do |e|  %>
+  <%= s.simple_fields_for :force_limits_set do |e|  %>
     <%= render "sensor_limits", e: e %>
   <% end %>
 
 
   <div class="links">
-    <%= link_to_add_association 'Добавить уставки', s, :force_limits_sets, partial: 'sensor_limits', form_name: "e" %>
+    <%= link_to_add_association 'Добавить уставки', s, :force_limits_set, partial: 'sensor_limits', form_name: "e" %>
   </div>
 
   <%= link_to_remove_association "Удалить", s %>

@@ -47,7 +47,7 @@ class PostsController < ApplicationController
                                  :phase, 
                                  :chain, 
                                  :_destroy,
-                                 force_limits_sets_attributes: [
+                                 force_limits_set_attributes: [
                                    :free_weight,
                                    :detection_limit,
                                    :warning_limit,
