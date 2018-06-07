@@ -1,16 +1,26 @@
-<%= simple_form_for @post, html: { multipart: true } do |p| %>
-  <%= p.input :num_tower %>
-  <%= p.input :line_name %>
+<%= simple_form_for @post, html: { multipart: true } do |form| %>
+  <%= form.input :num_tower %>
+  <%= form.input :line_name %>
 
-  <%= p.simple_fields_for :force_sensors do |fs| %>
-    <%= render 'sensor_fields', f: fs %>
-  <% end%>
+  <h3>Датчики усилия</h3>
+  
+  <%= form.simple_fields_for :force_sensors do |s| %>
+    <%= render "sensor_fields", s: s %>
+  <% end %>
 
-  <div class='links'>
-    <%= link_to_add_association 'Добавить датчик', p, :force_sensors, partial: 'sensor_fields' %>
-  </div></div>
+  <div class="links">
+    <%= link_to_add_association 'Добавить датчик', form, :force_sensors, partial: 'sensor_fields', form_name: "s" %>
+  </div>
 
+  <h3>Датчики температуры</h3>
+  
+  <%= form.simple_fields_for :temperature_sensors do |s| %>
+    <%= s.input :sensor_number %>
+    <%= s.input :phase %>
+    <%= s.input :chain %>
+  <% end %>
 
-  <%= p.submit 'Save' %>
+  <%= link_to 'Назад', root_path, class: 'btn btn-primary' %>
+  <%= form.submit  'Сохранить', class: 'btn btn-primary' %>
 
 <% end %>
