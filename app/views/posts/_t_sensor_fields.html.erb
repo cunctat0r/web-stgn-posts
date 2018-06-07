@@ -1,7 +1,7 @@
-<div class="row nested-fields justify-content-center align-items-center border  border-primary rounded mt-1">
-  <%= s.input :sensor_number %>
-  <%= s.input :phase %>
-  <%= s.input :chain %>
+<div class="row nested-fields justify-content-center align-items-center border border-dark rounded mt-1 bg-light">
+  <div class="col-md-4"><%= s.input :sensor_number %></div>
+  <div class="col-md-4"><%= s.input :phase %></div>
+  <div class="col-md-4"><%= s.input :chain %></div>
 
-  <%= link_to_remove_association "Удалить", s %>
+  <%= link_to_remove_association  fa_icon("trash", text: 'Удалить датчик'), s %>
 </div>

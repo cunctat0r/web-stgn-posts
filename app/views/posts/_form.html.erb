@@ -1,34 +1,45 @@
 <%= simple_form_for @post, html: { multipart: true } do |form| %>
-  <%= form.input :num_tower %>
-  <%= form.input :line_name %>
+  <%= form.input :num_tower, label: 'Номер опоры' %>
+  <%= form.input :line_name, label: 'Название линии' %>
   <div class="row">
-    <div class="border border-primary col-md-6">
+    <div class="border border-light col-md-6">
       <h3>Датчики усилия</h3>
       <%= form.simple_fields_for :force_sensors do |s| %>
         <%= render "sensor_fields", s: s %>
       <% end %>
 
       <div class="links">
-        <%= link_to_add_association 'Добавить датчик', 
+        <%= link_to_add_association fa_icon("plus-circle", text: 'Добавить датчик'), 
           form, 
           :force_sensors, 
           partial: 'sensor_fields', 
-          form_name: "s" %>
+          form_name: "s" 
+        %>
     </div>
     </div>
-    <div class="border border-primary col-md-6">
+    <div class="border border-light col-md-6">
       <h3>Датчики температуры</h3>
       <%= form.simple_fields_for :temperature_sensors do |s| %>
         <%= render "t_sensor_fields", s: s %>
       <% end %>
 
       <div class="links">
-        <%= link_to_add_association 'Добавить датчик', form, :temperature_sensors, partial: 't_sensor_fields', form_name: "s" %>
+        <%= link_to_add_association fa_icon("plus-circle", text: 'Добавить датчик'), 
+          form, 
+          :temperature_sensors, 
+          partial: 't_sensor_fields', 
+          form_name: "s" 
+        %>
       </div>
     </div>
   </div>
 
-  <%= link_to 'Назад', @post, class: 'btn btn-primary' %>
-  <%= form.submit  'Сохранить', class: 'btn btn-primary' %>
+  <div class="row mt-1">
+    <div class="btn-toolbar">
+      <%= link_to 'Назад', @post, class: 'btn btn-primary' %>
+      <%= form.submit  'Сохранить', class: 'btn btn-link' %>
+    </div>
+  </div>
+
 
 <% end %>
