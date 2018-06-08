@@ -4,7 +4,7 @@ This is the project of web-interface for Frost Monitoring System for Powerlines 
 
 TODO:
 
-- [ ] Add validation for models
+- [x] Add validation for models
 - [ ] Add tests for models
 - [ ] Add authentication for edit actions
 - [ ] Add image loading possibility (image of powerline tower with installed monitoring post)
