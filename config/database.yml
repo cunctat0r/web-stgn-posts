@@ -13,7 +13,7 @@ test:
 
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
+  database: fast-refuge-62440_production
+  username: fast-refuge-62440
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
 
