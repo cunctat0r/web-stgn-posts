@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2018_06_06_053016) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "force_limits_sets", force: :cascade do |t|
     t.float "free_weight"
     t.float "detection_limit"
     t.float "warning_limit"
     t.float "alarm_limit"
-    t.integer "force_sensor_id"
+    t.bigint "force_sensor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["force_sensor_id"], name: "index_force_limits_sets_on_force_sensor_id"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_06_06_053016) do
     t.integer "sensor_number"
     t.string "phase"
     t.integer "chain"
-    t.integer "post_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_force_sensors_on_post_id"
@@ -44,10 +47,13 @@ ActiveRecord::Schema.define(version: 2018_06_06_053016) do
     t.integer "sensor_number"
     t.string "phase"
     t.integer "chain"
-    t.integer "post_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_temperature_sensors_on_post_id"
   end
 
+  add_foreign_key "force_limits_sets", "force_sensors"
+  add_foreign_key "force_sensors", "posts"
+  add_foreign_key "temperature_sensors", "posts"
 end
