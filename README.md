@@ -1,24 +1,13 @@
-# README
+# Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the project of web-interface for Frost Monitoring System for Powerlines (FMSPL). We can add posts, wire weight sensors and limits for these sensors. 
 
-Things you may want to cover:
+TODO:
 
-* Ruby version
+- [ ] Add authentication for edit actions
+- [ ] Add image loading possibility (image of powerline tower with installed monitoring post)
+- [ ] Add measurement results
+- [ ] Add pivot table to show last measurements results for each post
+- [ ] Add rules to detect dangerous frost fnd corresponding bages to use in pivot table
+- [ ] Add charts to show monitoring results
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
