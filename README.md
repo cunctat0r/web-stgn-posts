@@ -10,4 +10,4 @@ TODO:
 - [ ] Add pivot table to show last measurements results for each post
 - [ ] Add rules to detect dangerous frost fnd corresponding bages to use in pivot table
 - [ ] Add charts to show monitoring results
-
+- [ ] Add CI/CD using TravisCI and Docker
