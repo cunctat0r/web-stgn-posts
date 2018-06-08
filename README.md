@@ -1,5 +1,7 @@
 # Readme
 
+[![Build Status](https://travis-ci.org/cunctat0r/web-stgn-posts.svg?branch=master)](https://travis-ci.org/cunctat0r/web-stgn-posts)
+
 This is the project of web-interface for Frost Monitoring System for Powerlines (FMSPL). We can add posts, wire weight sensors and limits for these sensors. 
 
 TODO:
