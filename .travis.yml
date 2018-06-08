@@ -1,6 +1,6 @@
 language: ruby
 before_script:
-  - psql -c "CREATE DATABASE web-stgn-posts_test;" -U postgres
+  - psql -c 'CREATE DATABASE web-stgn-posts_test;' -U postgres
 script:
 - bundle exec rspec
 notifications:
