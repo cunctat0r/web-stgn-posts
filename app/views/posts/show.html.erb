@@ -5,8 +5,8 @@
   <div class="col-md-7 border round">
     <div id="post">
       Линия <%= @post.line_name %>
-      Опора <%= @post.num_tower %>
-    </div>
+    Опора <%= @post.num_tower %>
+  </div>
   </div>
 </div>
 
@@ -15,17 +15,17 @@
     <p>Размещение датчиков усилия</p>
     <% @post.force_sensors.each do |sensor| %>
       <p>
-        Датчик <%= sensor.sensor_number %>: фаза <%= sensor.phase %>
-      </p>
-    <% end %>
+      Датчик <%= sensor.sensor_number %>: фаза <%= sensor.phase %>
+    </p>
+  <% end %>
   </div>
   <div class="col-md-6 border round">
     <p>Размещение датчиков температуры</p>
     <% @post.temperature_sensors.each do |sensor| %>
       <p>
-        Датчик <%= sensor.sensor_number %>: фаза <%= sensor.phase %>
-      </p>
-    <% end %>
+      Датчик <%= sensor.sensor_number %>: фаза <%= sensor.phase %>
+    </p>
+  <% end %>
   </div>
 </div>
 <div class="row mt-2">

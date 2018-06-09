@@ -11,13 +11,24 @@
 
   <body>
     <header>
-      <div class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Sign in', new_user_session_path %>
-          <%= link_to 'Sign up', new_user_registration_path %>
-        <% end %>
+      <div class="nav navbar-nav navbar-light bg-light navbar-expand-md">
+        <div class="navbar-brand">
+          <%= link_to 'СТГН', root_path %>
+        </div>
+        <div class="navbar-nav ml-auto ">
+          <% if user_signed_in? %>
+            <div class="nav-item">
+              <%= link_to 'Sign out', destroy_user_session_path, class: 'nav-link', method: :delete %>
+            </div>
+          <% else %>
+            <div class="nav-item">
+              <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+            </div>
+            <div class="nav-item">
+              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </header>
     <div class="container">
