@@ -16,5 +16,10 @@ RSpec.describe Post, type: :model do
     it { should have_many(:temperature_sensors) }
     it { should accept_nested_attributes_for(:force_sensors) }
     it { should accept_nested_attributes_for(:temperature_sensors) }
+    it { should belong_to(:user) }
+  end
+
+  context 'authentications' do
+    it { should use_before_action(:authenticate_user!) }
   end
 end
